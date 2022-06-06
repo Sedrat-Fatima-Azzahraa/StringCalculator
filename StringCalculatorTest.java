@@ -22,4 +22,11 @@ public class StringCalculatorTest {
     int result = sc.Add("2");
     assertEquals(2, result);
   }
+
+  @Test
+  public void returnTwoIfGivenOneCommaOne() {
+    StringCalculator sc = new StringCalculator();
+    int result = sc.Add("1,1");
+    assertEquals(2, result);
+  }
 }
