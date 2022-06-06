@@ -43,4 +43,11 @@ public class StringCalculatorTest {
     int result = sc.Add("1,1,1");
     assertEquals(3, result);
   }
+
+  @Test
+  public void returnSixtyIfGivenTenCommaTwentyCommaThirty() {
+    StringCalculator sc = new StringCalculator();
+    int result = sc.Add("10,20,30");
+    assertEquals(60, result);
+  }
 }
