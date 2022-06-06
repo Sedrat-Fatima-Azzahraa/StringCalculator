@@ -3,6 +3,12 @@ public class StringCalculator {
 		if (numbers.isEmpty()) {
 			return 0;
 		}
-		return Integer.parseInt(numbers);
+		if (numbers.indexOf(",") == -1) {
+			return Integer.parseInt(numbers);
+		}
+		String left = numbers.substring(0, numbers.indexOf(","));
+		String right = numbers.substring(numbers.indexOf(",") + 1);
+
+		return Integer.parseInt(left) + Integer.parseInt(right);
 	}
 }
