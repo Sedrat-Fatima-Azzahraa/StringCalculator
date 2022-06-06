@@ -36,4 +36,11 @@ public class StringCalculatorTest {
     int result = sc.Add("10,20");
     assertEquals(30, result);
   }
+
+  @Test
+  public void returnThreeIfGivenOneCommaOneCommaOne() {
+    StringCalculator sc = new StringCalculator();
+    int result = sc.Add("1,1,1");
+    assertEquals(3, result);
+  }
 }
