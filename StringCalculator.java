@@ -3,16 +3,10 @@ public class StringCalculator {
 		if (numbers.isEmpty()) {
 			return 0;
 		}
-
-		int commaIndex = numbers.indexOf(",");
-		
-		if (commaIndex == -1) {
-			return Integer.parseInt(numbers);
+		int sum = 0;
+		for (var part : numbers.split(",")) {
+			sum += Integer.parseInt(part);
 		}
-
-		String left = numbers.substring(0, commaIndex);
-		String right = numbers.substring(commaIndex + 1);
-
-		return Integer.parseInt(left) + Integer.parseInt(right);
+		return sum;
 	}
 }
