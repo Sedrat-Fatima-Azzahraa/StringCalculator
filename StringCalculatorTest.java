@@ -57,4 +57,11 @@ public class StringCalculatorTest {
     int result = sc.Add("1\n2,3");
     assertEquals(6, result);
   }
+
+  @Test
+  public void returnThreeIfGivenCustomDelimiterAndOneDelimiterTwo() {
+    StringCalculator sc = new StringCalculator();
+    int result = sc.Add("//;\n1;2");
+    assertEquals(3, result);
+  }
 }
