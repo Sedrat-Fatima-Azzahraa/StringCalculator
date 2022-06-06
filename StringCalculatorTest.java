@@ -1,5 +1,6 @@
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class StringCalculatorTest {
   @Test
@@ -63,5 +64,16 @@ public class StringCalculatorTest {
     StringCalculator sc = new StringCalculator();
     int result = sc.Add("//;\n1;2");
     assertEquals(3, result);
+  }
+
+  @Test
+  public void throwsExceptionIfGivenNegativeNumbers() {
+    StringCalculator sc = new StringCalculator();
+    try {
+      int result = sc.Add("//;\n1;-2;3;-4");
+    } catch (Exception e) {
+      assertEquals("negatives not allowed: -2, -4." ,e.getMessage());
+    }
+    fail("StringCalculator Add method did not throw exception on negative numbers.");
   }
 }
