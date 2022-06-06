@@ -50,4 +50,11 @@ public class StringCalculatorTest {
     int result = sc.Add("10,20,30");
     assertEquals(60, result);
   }
+
+  @Test
+  public void returnSixIfGivenOneNewLineTwoCommaThree() {
+    StringCalculator sc = new StringCalculator();
+    int result = sc.Add("1\n2,3");
+    assertEquals(6, result);
+  }
 }
