@@ -4,7 +4,7 @@ public class StringCalculator {
 			return 0;
 		}
 		int sum = 0;
-		for (var part : numbers.split(",")) {
+		for (var part : numbers.split(",|\n")) {
 			sum += Integer.parseInt(part);
 		}
 		return sum;
